@@ -13,10 +13,10 @@ questions.forEach((question) => {
         question.classList.toggle("show-answer");
         btn.classList.toggle("rotate-btn");
         if (!question.classList.contains("show-answer")) {
-            question.setAttribute("aria-expaned", "false");
+            btn.setAttribute("aria-expaned", "false");
             title.classList.remove("highlight-title");
         } else {
-            question.setAttribute("aria-expanded", "true");
+            btn.setAttribute("aria-expanded", "true");
             title.classList.add("highlight-title");
         }
     });
