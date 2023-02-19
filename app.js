@@ -1,5 +1,4 @@
 const questions = document.querySelectorAll(".question");
-
 questions.forEach((question) => {
     const btn = question.querySelector(".btn");
     const title = question.querySelector("h2");

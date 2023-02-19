@@ -1,11 +1,9 @@
+/* ================== Global Styles ================= */
 :root {
-    /* ================ Primary ================ */
     --very-dark-saturated-blue: hsl(238, 29%, 16%);
     --soft-red: hsl(14, 88%, 65%);
-    /* ============ Background Gradient ========== */
     --soft-violet: hsl(273, 75%, 66%);
     --soft-blue: hsl(240, 73%, 65%);
-    /* ================ Neutral ================== */
     --very-dark-grayish-blue: hsl(237, 12%, 33%);
     --dark-grayish-blue: hsl(240, 6%, 50%);
     --light-grayish-blue: hsl(240, 5%, 91%);
@@ -37,16 +35,19 @@ main {
     height: 100vh;
 }
 
+/* ======================== Card ====================== */
+
 .card {
-    /* position: relative; */
     display: flex;
     flex-direction: row;
+    overflow: hidden;
+    margin: auto;
     border-radius: 2.5rem;
     max-width: 75rem;
-    margin: auto;
     background-color: white;
-    overflow: hidden;
 }
+
+/* ===================== Images ===================== */
 
 .illustrations,
 .faq {
@@ -88,13 +89,14 @@ main {
     display: none;
 }
 
+/* ========================= Accordion ================== */
 .faq {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 6rem 0;
-    padding-right: 10rem;
     width: 50%;
+    padding-right: 10rem;
 }
 
 .heading {
@@ -110,8 +112,8 @@ main {
 .title {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 1.2rem;
     transition: all 0.2s linear;
+    padding-bottom: 1.2rem;
     cursor: pointer;
 }
 
@@ -129,23 +131,23 @@ h2 {
 }
 
 .answer {
-    height: 0;
-    overflow: hidden;
     opacity: 0.3;
+    overflow: hidden;
     transition: all 0.3s linear;
+    height: 0;
 }
 
 .show-answer .answer {
+    opacity: 1;
     height: max-content;
     padding-bottom: 1.2rem;
-    opacity: 1;
 }
 
 button {
+    transition: all 0.3s linear;
     border: none;
     background: none;
     cursor: pointer;
-    transition: all 0.3s linear;
 }
 
 .rotate-btn {
@@ -156,12 +158,14 @@ button {
     color: var(--soft-red);
 }
 
+/* ===================== Media Queries ======================= */
+
 @media (max-width: 1000px) {
     .card {
         flex-direction: column;
-        width: 90%;
-        margin: auto 5%;
         overflow: initial;
+        margin: auto 5%;
+        width: 90%;
     }
 
     .illustrations {
@@ -169,45 +173,39 @@ button {
         height: 0;
     }
 
-    .bg-woman {
-        display: none;
-    }
-
-    .bg-pattern {
-        display: none;
-    }
-
+    .bg-woman,
+    .bg-pattern,
     .bg-box {
         display: none;
     }
 
-    .mobile-pattern {
-        display: block;
+    .mobile-pattern,
+    .mobile-woman {
         position: relative;
-        top: -17rem;
+        display: block;
         margin: 0 auto;
+    }
+
+    .mobile-pattern {
+        top: -17rem;
         width: 23rem;
-        /* left: -50%; */
     }
 
     .mobile-woman {
-        position: relative;
         top: -10rem;
-        width: 21.6rem;
-        margin: 0 auto;
         z-index: 4;
-        display: block;
+        width: 21.6rem;
     }
 
     .faq {
         margin: 10rem auto 2.5rem;
-        padding: 2rem;
         width: 100%;
+        padding: 2rem;
     }
 
     .heading {
-        text-align: center;
-        font-size: 2rem;
         padding-bottom: 2rem;
+        font-size: 2rem;
+        text-align: center;
     }
 }
